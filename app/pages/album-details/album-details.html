@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Detalhes</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="/assets/resources/styles/style.css" />
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!--Declaração da navbar-->
+    <div id="menu"></div>
+
+    <main>
+        <!-- cabeçalho página -->
+        <div class="linha-horizontal"></div>
+        <p class="titulo-pagina">THIS IS WHY - PARAMORE</p>
+
+        <!-- Button trigger modal -->
+        <a href="/index.html"><button type="button" class="btn btn-dark">
+                Voltar
+            </button>
+        </a>
+
+        <a href="/app/pages/register-album/register-album.html"><button type="button" class="btn btn-dark">
+                Editar Album
+            </button>
+        </a>
+
+        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#excluirAlbum">
+            Excluir Album
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="excluirAlbum" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                            Excluir Album
+                        </h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <p>Deseja excluir o album This is Why?</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
+                            Cancelar
+                        </button>
+                        <button type="button" class="btn btn-danger">Excluir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Detalhes do Album-->
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/assets/resources/images/this-is-why-paramore-album-cover.jpg" class="card-img-top"
+                        alt="..." />
+                    <div class="card-body">
+                        <h5 class="card-title">This is Why</h5>
+                        <p class="card-text">Paramore</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <!--Campo em branco-->
+            </div>
+
+            <!--Musicas do Album-->
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Musicas</h5>
+                        <p class="card-text">1. This is Why</p>
+                        <p class="card-text">2. The News</p>
+                        <p class="card-text">3. Running Out of Time</p>
+                        <p class="card-text">4. C'est Comma ça</p>
+                        <p class="card-text">5. Big Man, Little Dignity</p>
+                        <p class="card-text">6. Figure 8</p>
+                        <p class="card-text">7. You First</p>
+                        <p class="card-text">8. Liar</p>
+                        <p class="card-text">9. Crave</p>
+                        <p class="card-text">10. Thick Skull</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script type="module" src="/app/pages/index.js"></script>
+</body>
+
+</html>

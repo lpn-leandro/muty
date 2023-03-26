@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Adicionar Música</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="/assets/resources/styles/style.css" />
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+
+    <div id="menu"></div>
+      <!-- cabeçalho página -->
+      <div class="linha-horizontal"></div>
+      <p class="titulo-pagina">CADASTRAR ALBUM</p>
+    <main>
+      <div class="content">
+      <a href="/index.html"><button type="button" class="btn btn-primary">Voltar</button></a>
+      <!--Formulario-->
+    <form>
+      <div class="mb-3">
+        <img src="/assets/resources/images/this-is-why-paramore-album-cover.jpg" class="object-fit-cover border rounded" alt="..." style="height: 20em;">
+        <br>
+        <label for="formFile" class="form-label">Capa do Album:</label>
+        <input class="form-control" type="file" id="formFile" />
+      </div>
+
+      <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label"
+          >Nome do Album:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="formGroupExampleInput"
+          placeholder="Nome do Album"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label"
+          >Artista do Album</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="formGroupExampleInput2"
+          placeholder="Nome do Artista"
+        />
+      </div>
+
+      <label for="customRange1" class="form-label">Nota: </label>
+      <input type="range" class="form-range" id="customRange1" />
+
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label"
+          >Musicas</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="formGroupExampleInput2"
+          placeholder="Nome do Artista"
+        />
+        <button type="button" class="btn btn-primary" onclick="AdicionarNovaMusica()">Adicionar Musica</button>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Cadastrar Album</button>
+      </form>
+    </div>
+
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script type="module" src="/app/pages/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+@import url("http://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("/node_modules/bootstrap/dist/css/bootstrap.css");
+
+@font-face {
+  font-family: Inter;
+  src: url(/assets/resources/fonts/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+@font-face {
+  font-family: Inter-Regular;
+  src: url(/assets/resources/fonts/static/Inter-Regular.ttf);
+}
+
+@font-face {
+  font-family: Inter-Bold;
+  src: url(/assets/resources/fonts/static/Inter-Bold.ttf);
+}
+
+@font-face {
+  font-family: Inter-Semibold;
+  src: url(/assets/resources/fonts/static/Inter-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: Inter-Medium;
+  src: url(/assets/resources/fonts/static/Inter-Medium.ttf);
+}
+
+* {
+  border: 1px;
+  border-style: dotted;
+  border-color: red;
+}
+
+body,
+html {
+  background-color: #f1f1f1 !important;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+.navbar-estilo-fonte {
+  font-family: Inter-Regular, Arial, Helvetica, sans-serif;
+  font-size: 2em;
+  color: #f1f1f1;
+  margin: auto;
+}
+
+.navbar-estilo-fonte:hover {
+  color: #f1f1f1;
+}
+
+.titulo-pagina {
+  font-size: 1.4em;
+  font-family: Inter-Bold, Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.linha-horizontal {
+  width: 40%;
+  border: 0.01em solid #000;
+  margin: auto;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.content {
+  margin: 0% 15%;
+}
+
+.detalhes-album {
+  background-color: rgba(0, 0, 0, 0.74);
+  color: #f1f1f1;
+  position: absolute;
+  margin: 9.2rem 0rem 0rem 0rem;
+  height: 3.1rem;
+  width: 12.3rem;
+}
