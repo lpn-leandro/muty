@@ -1,5 +1,5 @@
 'use strict';
 //Declaração de páginas que se repetem
 $(function () {
-  $("#menu").load('/navbar.html');
+  $("#menu").load('/menu.html');
 });

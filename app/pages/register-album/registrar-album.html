@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Adicionar Música</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="/assets/resources/styles/style.css" />
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+  <div id="menu"></div>
+
+  <!-- cabeçalho página -->
+  <div class="linha-horizontal"></div>
+  <p class="titulo-pagina">CADASTRAR ALBUM</p>
+
+  <main>
+    <div class="content">
+      <a href="/index.html"><button type="button" class="btn btn-primary">Voltar</button></a>
+
+
+      <!--Formulario-->
+      <form onsubmit="registraAlbum()">
+        <div class="mb-3">
+          <img src="https://res.cloudinary.com/df6dc2xwr/image/upload/v1680049532/this-is-why-paramore-album-cover_ku8eld.jpg"
+            class="object-fit-cover border rounded" alt="..." style="height: 20em;">
+          <br>
+          <label for="formFile" class="form-label">Capa do Album:</label>
+          <input class="form-control" type="file" id="formFile" />
+        </div>
+
+        <div class="mb-3">
+          <label for="albumName" class="form-label">Nome do Album:</label>
+          <input type="text" class="form-control" id="albumName" placeholder="Nome do Album" />
+        </div>
+
+        <div class="mb-3">
+          <label for="albumArtist" class="form-label">Artista do Album</label>
+          <input type="text" class="form-control" id="albumArtist" placeholder="Nome do Artista" />
+        </div>
+
+        <label for="albumRate" class="form-label">Nota: </label>
+        <input type="range" class="form-range" id="albumRate" min="0" max="100" />
+
+        <div class="mb-3">
+          <label for="formGroupExampleInput2" class="form-label">Musicas</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Nome do Artista" />
+          <div id="novaMusica"></div>
+          <button type="button" class="btn btn-primary" onclick="AdicionarNovaMusica()">Adicionar Musica</button>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Cadastrar Album</button>
+      </form>
+    </div>
+
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script type="module" src="/app/pages/index.js"></script>
+</body>
+
+</html>
