@@ -1,7 +1,9 @@
 {
   "dependencies": {
     "bootstrap": "^5.2.3",
+    "eslint": "^8.40.0",
     "jquery": "^3.6.4",
+    "jshint": "^2.13.6",
     "jslint": "^0.12.1"
   }
 }

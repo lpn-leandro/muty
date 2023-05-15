@@ -1,5 +1,7 @@
 'use strict';
+
 import "../util/shared.js";
+import "../model/album.js";
 
 //checklist prompt, alert, confirm.
 document.getElementById('perguntaSecreta').onclick = function () {
@@ -32,3 +34,31 @@ document.getElementById('secret-button').onload = setTimeout(function () {
 //Checklist funções
 
 //https://cloudinary.com/
+
+window.onload = function listarAlbums() {
+    let albums;
+    if (localStorage.getItem("albums") == null) {
+        albums = [];
+    } else {
+        albums = JSON.parse(localStorage.getItem("albums"));
+    }
+
+    let html = "";
+
+    albums.forEach(function (element, index) {
+        html += 
+            `<div class="col">
+                <div class="card h-100">
+                    <a href="./app/pages/album-details/detalhes-album.html/${element}"><img src="${element.albumArt}"
+                     class="card-img-top" alt="..." /></a>
+                    <div class="card-body">
+                        <h5 class="card-title">${element.albumName}</h5>
+                        <p class="card-text">${element.albumArtist}</p>
+                        <div>${element.albumRate}</div>
+                    </div>
+                </div>
+            </div>`
+    });
+
+    document.querySelector("#albumsList").innerHTML = html;
+}
