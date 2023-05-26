@@ -30,32 +30,42 @@
           <br>
           <hr>
           <label for="albumArt" class="form-label">Capa do Album:</label>
-          <input type="text" class="form-control" id="albumArt" placeholder="Insira a URL para a capa do Album" />
+          <input type="text" class="form-control" id="albumArt" placeholder="Insira a URL para a capa do Album"
+            value="" />
         </div>
 
         <div class="mb-3">
           <label for="albumName" class="form-label">Nome do Album:</label>
-          <input type="text" class="form-control" id="albumName" placeholder="Nome do Album" />
+          <input type="text" class="form-control" id="albumName" placeholder="Nome do Album" value="" />
         </div>
 
         <div class="mb-3">
           <label for="albumArtist" class="form-label">Artista do Album</label>
-          <input type="text" class="form-control" id="albumArtist" placeholder="Nome do Artista" />
+          <input type="text" class="form-control" id="albumArtist" placeholder="Nome do Artista" value="" />
         </div>
 
-        <div class="mb-3 col-1">
-          <label for="albumRate" class="form-label">Nota</label>
-          <input type="text" class="form-control" id="albumRate" placeholder="0-100" />
+        <div class="mb-3 ">
+          <label for="albumRate" class="form-label">Nota</label><br>
+
+          <!--Agrupamento de botões de nota-->
+          <input type="radio" class="btn-check" name="options" id="bad" autocomplete="off">
+          <label class="btn btn-outline-danger" for="bad" value="ruim">Ruim</label>
+
+          <input type="radio" class="btn-check" name="options" id="average" autocomplete="off">
+          <label class="btn btn-outline-warning" for="average" value="médio">Médio</label>
+
+          <input type="radio" class="btn-check" name="options" id="good" autocomplete="off">
+          <label class="btn btn-outline-success" for="good" value="bom">Bom</label>
         </div>
 
 
         <div class="mb-3">
           <label for="musics" class="form-label">Musicas</label>
-          <input type="text" class="form-control" id="albumMusics" placeholder="Musica1, Musica2, Musica3" />
+          <input type="text" class="form-control" id="albumMusics" placeholder="Musica1, Musica2, Musica3" value="" />
           <div id="novaMusica"></div>
         </div>
 
-        <button class="btn btn-primary" >Cadastrar Album</button>
+        <button class="btn btn-primary">Cadastrar Album</button>
     </div>
     </form>
 

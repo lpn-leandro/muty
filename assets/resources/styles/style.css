@@ -26,12 +26,12 @@
   src: url(/assets/resources/fonts/static/Inter-Medium.ttf);
 }
 
-* {
+/** * {
   border: 1px;
   border-style: dotted;
   border-color: red;
 }
-
+**/
 body,
 html {
   background-color: #f1f1f1 !important;
@@ -67,7 +67,7 @@ html {
   margin: 0% 15%;
 }
 
-.detalhes-album {
+.album-details {
   background-color: rgba(0, 0, 0, 0.74);
   color: #f1f1f1;
   position: absolute;

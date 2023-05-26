@@ -1,7 +1,14 @@
 'use strict';
 
-import "../util/shared.js";
-import "../model/album.js";
+/**Exigencias do lint
+- Uso do use strict
+- Uso de ponto e virgula no final
+- Exigencia do uso de === invés de ==
+- Evitar espaços em branco no texto Exemplo= 
+- Exigencia do uso de variaveis no estilo camelCase ou UPPER_CASE com Underline
+-
+
+**/
 
 //checklist prompt, alert, confirm.
 document.getElementById('perguntaSecreta').onclick = function () {
@@ -12,7 +19,7 @@ document.getElementById('perguntaSecreta').onclick = function () {
     } else {
         window.alert(`Seu nome não é ${resposta}`);
     }
-}
+};
 
 //Checklist setInterval
 document.getElementById('secret-button').onclick = function () {
@@ -22,8 +29,8 @@ document.getElementById('secret-button').onclick = function () {
     }, 1000);
     document.getElementById('clone-secret-menu').onclick = function () {
         setTimeout(clearInterval(chave), 500);
-    }
-}
+    };
+};
 
 //Checklist setTimeout
 document.getElementById('secret-button').onload = setTimeout(function () {
@@ -37,7 +44,7 @@ document.getElementById('secret-button').onload = setTimeout(function () {
 
 window.onload = function listarAlbums() {
     let albums;
-    if (localStorage.getItem("albums") == null) {
+    if (localStorage.getItem("albums") === null) {
         albums = [];
     } else {
         albums = JSON.parse(localStorage.getItem("albums"));
@@ -46,10 +53,10 @@ window.onload = function listarAlbums() {
     let html = "";
 
     albums.forEach(function (element, index) {
-        html += 
-            `<div class="col">
+        console.log('Element' + element + 'index' + index);
+        html +=`<div class="col">
                 <div class="card h-100">
-                    <a href="./app/pages/album-details/detalhes-album.html/${element}"><img src="${element.albumArt}"
+                    <a href="./app/pages/album-details/album-details.html/${index}"><img src="${element.albumArt}"
                      class="card-img-top" alt="..." /></a>
                     <div class="card-body">
                         <h5 class="card-title">${element.albumName}</h5>
@@ -57,8 +64,8 @@ window.onload = function listarAlbums() {
                         <div>${element.albumRate}</div>
                     </div>
                 </div>
-            </div>`
+            </div>`;
     });
 
     document.querySelector("#albumsList").innerHTML = html;
-}
+};

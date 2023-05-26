@@ -1,21 +1,28 @@
-"use strict";
-import { Album } from "../../model/album.js";
+'use strict';
+
+//import { Album } from "../../model/album.js";
 
 let albums = JSON.parse(localStorage.getItem("albums")) || [];
 
 window.onload = function () {
   document.forms[0].onsubmit = cadastrarAlbum;
 
-  let elements = document.getElementsByTagName("input")
+  let elements = document.getElementsByTagName("input");
   for (let e of elements) {
-    console.log("for1");
+    console.log("e.value");
     e.addEventListener("focus", focus);
+
+    //if(e.value = "")
+    e.addEventListener("blur", blur);
   }
 
   function focus(event) {
     event.target.style.backgroundColor = "green";
   }
 
+    function blur(event) {
+      event.target.style.backgroundColor = "red";
+  }
 }
 
 function cadastrarAlbum(event) {

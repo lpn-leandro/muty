@@ -6,7 +6,7 @@
 - [x] - Wireframe
 
 ---
-Parte 1 (9/35)
+Parte 1 (10/35)
 
 Caixas de Diálogo
 
@@ -44,7 +44,7 @@ Acesso aos elementos DOM do HTML
 - [ ] Via referência DOM pelo id do elemento HTML
 - [x] Via getElementByID()
 - [ ] Via getElementsByName()
-- [ ] Via getElementsByTagName()
+- [x] Via getElementsByTagName()
 - [ ] Via seletores CSS usados na função querySelector() ou querySelectorAll()
 
 Tratadores de Evento
@@ -68,12 +68,12 @@ Objetos
 - [ ] Usar herança prototipal nativa ou herança de classes do ES6
 
 ---
-Parte 2[6/16]
+Parte 2[8/16]
 
 Qualidade do código
 
 - [x] Usar um Style Guide - apresentar o uso de pelo menos 10 regras do style escolhido (sugerido AirBnb)
-- [ ] Usar um lint - mostrar a correção de pelo menos 5 problemas informados pelo lint (sugerido JSHint - usar o arquivo .jshintrc disponível no moodle)
+- [x] Usar um lint - mostrar a correção de pelo menos 5 problemas informados pelo lint (sugerido JSHint - usar o arquivo .jshintrc disponível no moodle)
 - [x] Usar strict mode
 - [ ] Usar Module Pattern
 - [x] Usar pasta assets e subpastas resources e libraries para organizar o código
@@ -90,7 +90,7 @@ Formulário
 - [ ] Ler e escrever em elementos input com a propriedade value
 - [x] Alterar o conteúdo de elementos div ou p com a propriedade innerHTML ou textContent
 - [ ] Manipulação de elemento de listagem, como checkbox, radio ou select
-- [ ] Acesso aos elementos de um formulário via hierarquia (caminho) de objetos, ou seja, array forms e elements
+- [x] Acesso aos elementos de um formulário via hierarquia (caminho) de objetos, ou seja, array forms e elements
 
 ---
 
