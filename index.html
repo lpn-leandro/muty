@@ -1,66 +1,93 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <title>Página Inicial</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="/assets/resources/styles/style.css" />
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  </head>
 
-<head>
-  <title>Página Inicial</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="stylesheet" href="/assets/resources/styles/style.css" />
-  <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-</head>
+  <body>
+    <div id="menu"></div>
+    <!--Main -->
+    <main>
+      <!-- Cabeçalho página -->
+      <div class="linha-horizontal"></div>
+      <p class="titulo-pagina">MEUS ALBUNS</p>
 
-<body>
-  <div id="menu"></div>
-  <!--Main -->
-  <main>
-    <!-- Cabeçalho página -->
-    <div class="linha-horizontal"></div>
-    <p class="titulo-pagina">MEUS ALBUNS</p>
+      <!-- Botões -->
+      <a href="/app/pages/register-album/register-album.html"
+        ><button type="button" class="btn btn-dark">Adicionar Album</button></a
+      >
 
-    <!-- Botões -->
-    <a href="/app/pages/register-album/register-album.html"><button type="button" class="btn btn-dark">
-        Adicionar Album
-      </button></a>
+      <button
+        disabled
+        id="secret-button"
+        type="button"
+        class="btn btn-dark"
+        data-bs-toggle="modal"
+        data-bs-target="#botaoNadaSecreto"
+      >
+        Botão nada secreto
+      </button>
 
-    <button disabled id="secret-button" type="button" class="btn btn-dark" data-bs-toggle="modal"
-      data-bs-target="#botaoNadaSecreto">
-      Botão nada secreto
-    </button>
+      <!--modal-->
+      <div
+        class="modal fade"
+        id="botaoNadaSecreto"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Menu nada secreto
+              </h1>
+              <div id="contador"></div>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+                id="clone-secret-menu"
+              ></button>
+            </div>
 
-    <!--modal-->
-    <div class="modal fade" id="botaoNadaSecreto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Menu nada secreto</h1>
-            <div id="contador"></div>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-              id="clone-secret-menu"></button>
-          </div>
-
-          <div class="modal-body">
-            <h2 class="fs-5">Botões com funcionalidades nada secretas</h2>
-            <p>Esse <button class="btn btn-secondary" id="perguntaSecreta">botão</button> vai lhe perguntar algo
-            </p>
-            <hr>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <div class="modal-body">
+              <h2 class="fs-5">Botões com funcionalidades nada secretas</h2>
+              <p>
+                Esse
+                <button class="btn btn-secondary" id="perguntaSecreta">
+                  botão
+                </button>
+                vai lhe perguntar algo
+              </p>
+              <hr />
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- listagem de albums -->
-    <div class="content">
-      <div class="row row-cols-1 row-cols-md-4 g-4" id="albumsList">
-
+      <!-- listagem de albums -->
+      <div class="content">
+        <div class="row row-cols-1 row-cols-md-4 g-4" id="albumsList"></div>
       </div>
-
-    </div>
-  </main>
-  <script src="/node_modules/jquery/dist/jquery.js"></script>
-  <script type="module" src="/app/pages/index.js"></script>
-</body>
+    </main>
+    <div id="footer"></div>
+    <script type="module" src="/app/util/shared.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script type="module" src="/app/pages/index.js"></script>
+  </body>
 </html>

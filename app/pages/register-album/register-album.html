@@ -24,45 +24,52 @@
       <!--Formulario-->
       <form id="form">
         <div class="mb-3">
-          <img
-            src="https://res.cloudinary.com/df6dc2xwr/image/upload/v1680049532/this-is-why-paramore-album-cover_ku8eld.jpg"
+          <img id="image-preview"
+            src=""
             class="object-fit-cover border rounded" alt="..." style="height: 20em;">
           <br>
           <hr>
           <label for="albumArt" class="form-label">Capa do Album:</label>
-          <input type="text" class="form-control" id="albumArt" placeholder="Insira a URL para a capa do Album"
-            value="" />
+          <input type="url" class="form-control" id="albumArt" placeholder="Insira a URL para a capa do Album"
+            oninput="loadImage()"/>
         </div>
 
         <div class="mb-3">
           <label for="albumName" class="form-label">Nome do Album:</label>
-          <input type="text" class="form-control" id="albumName" placeholder="Nome do Album" value="" />
+          <input type="text" class="form-control" id="albumName" placeholder="Nome do Album"  />
         </div>
 
         <div class="mb-3">
           <label for="albumArtist" class="form-label">Artista do Album</label>
-          <input type="text" class="form-control" id="albumArtist" placeholder="Nome do Artista" value="" />
+          <input type="text" class="form-control" id="albumArtist" placeholder="Nome do Artista" />
         </div>
 
+        <div class="mb-3">
+          <label for="releaseDate" class="form-label">Data de lançamento</label>
+          <input type="text" class="form-control" id="releaseDate" placeholder="Data de Lançamento" />
+        </div>
+
+        
         <div class="mb-3 ">
           <label for="albumRate" class="form-label">Nota</label><br>
+          <input type="number" min="0" max="100" class="form-control" id="albumRate" placeholder="Nome do Artista" />
+          <!--Agrupamento de botões de nota
+          <input type="radio" class="btn-check" name="options" id="bad" value="bad">
+          <label class="btn btn-outline-danger" for="bad" >Ruim</label>
 
-          <!--Agrupamento de botões de nota-->
-          <input type="radio" class="btn-check" name="options" id="bad" autocomplete="off">
-          <label class="btn btn-outline-danger" for="bad" value="ruim">Ruim</label>
+          <input type="radio" class="btn-check" name="options" id="average" value="average">
+          <label class="btn btn-outline-warning" for="average">Médio</label>
 
-          <input type="radio" class="btn-check" name="options" id="average" autocomplete="off">
-          <label class="btn btn-outline-warning" for="average" value="médio">Médio</label>
-
-          <input type="radio" class="btn-check" name="options" id="good" autocomplete="off">
-          <label class="btn btn-outline-success" for="good" value="bom">Bom</label>
+          <input type="radio" class="btn-check" name="options" id="good" value="good">
+          <label class="btn btn-outline-success" for="good">Bom</label>
+          -->
         </div>
-
+          
 
         <div class="mb-3">
           <label for="musics" class="form-label">Musicas</label>
-          <input type="text" class="form-control" id="albumMusics" placeholder="Musica1, Musica2, Musica3" value="" />
-          <div id="novaMusica"></div>
+          <input type="text" class="form-control" id="albumMusics" placeholder="Musica1, Musica2, Musica3"/>
+          <!--<div id="novaMusica"></div>-->
         </div>
 
         <button class="btn btn-primary">Cadastrar Album</button>
@@ -72,7 +79,7 @@
     <script src="/node_modules/jquery/dist/jquery.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="module" src="/app/pages/register-album/register-album.js"></script>
-
+    <script src="/app/util/jquery.mask.js"></script>
 </body>
 
 </html>

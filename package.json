@@ -1,11 +1,26 @@
 {
+  "name": "muty",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "json:server": "json-server --watch db.json",
+    "json:server:routes": "json-server --watch db.json --routes routes.json"
+  },
   "dependencies": {
     "bootstrap": "^5.2.3",
-    "eslint": "^8.40.0",
     "express": "^4.18.2",
     "jquery": "^3.6.4",
     "jshint": "^2.13.6",
     "jslint": "^0.12.1",
+    "json-server": "^0.17.3",
     "npm": "^9.6.7"
+  },
+  "devDependencies": {
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0"
   }
 }
