@@ -1,17 +1,6 @@
 'use strict';
 
-/**Exigencias do lint
-- Uso do use strict
-- Uso de ponto e virgula no final
-- Exigencia do uso de === invés de ==
-- Evitar espaços em branco no texto Exemplo= 
-- Exigencia do uso de variaveis no estilo camelCase ou UPPER_CASE com Underline
--
-
-**/
-
-//checklist prompt, alert, confirm.
-document.getElementById('perguntaSecreta').onclick = function () {
+function secretQuestion() {
   let resposta = window.prompt('Qual é o seu nome?');
   let confirmacao = window.confirm(`O seu nome realmente é ${resposta}?`);
   if (confirmacao) {
@@ -19,9 +8,8 @@ document.getElementById('perguntaSecreta').onclick = function () {
   } else {
     window.alert(`Seu nome não é ${resposta}`);
   }
-};
+}
 
-//Checklist setInterval
 document.getElementById('secret-button').onclick = function () {
   let tempo = 0;
   let chave = setInterval(function () {
@@ -32,16 +20,21 @@ document.getElementById('secret-button').onclick = function () {
   };
 };
 
-//Checklist setTimeout
-document.getElementById('secret-button').onload = setTimeout(function () {
+document.getElementById('secret-button').onload = setTimeout(() => {
   let button = document.getElementById('secret-button');
   button.removeAttribute('disabled');
 }, 10000);
 
-//Checklist funções
+function dateCookies() {
+  let data = Date();
+  document.cookie = data;
 
-//https://cloudinary.com/
-//?id=2
+  console.log('Acessado em: ' + document.cookie);
+  document.querySelector('#readCookie').innerHTML = document.cookie;
+  //função bugada, apenas no primeiro carregamento le o dado, após o f5 ele não retorna os dados,
+  //mas dando ctrl + f5 e recarregando os cookies ele volta a ler
+}
+
 window.onload = function listarAlbums() {
   let albums;
   if (localStorage.getItem('albums') === null) {
@@ -54,9 +47,9 @@ window.onload = function listarAlbums() {
 
   albums.forEach(function (element, index) {
     console.log('Element' + element + 'index' + index);
-    html += `<div class="col">
+    html += `<div class="col" name="card-html">
                 <div class="card h-100">
-                    <a href="./app/pages/album-details/album-details.html/${index}">
+                    <a href="./app/pages/album-details/album-details.html?${index}">
                     <img src="${element.albumArt}"
                      class="card-img-top" alt="..." /></a>
                     <div class="card-body">
@@ -69,14 +62,8 @@ window.onload = function listarAlbums() {
   });
 
   document.querySelector('#albumsList').innerHTML = html;
-
-  let data = Date();
-  document.cookie = data;
-
-  console.log('Acessado em: ' + document.cookie);
-  document.querySelector('#readCookie').innerHTML = document.cookie;
-  //função bugada, apenas no primeiro carregamento le o dado, após o f5 ele não retorna os dados, 
-  //mas dando ctrl + f5 e recarregando os cookies ele volta a ler
+  getTotals();
+  dateCookies();
 };
 
 //JQuery
@@ -108,3 +95,42 @@ $('.content')
 $('#secret-button').on('mouseover', function () {
   $(this).text('NÃO CLIQUE');
 });
+
+//
+(function () {
+  fetch(`https://viacep.com.br/ws/85070200/json/`).then((response) => {
+    response.json().then((data) => showData(data));
+  });
+
+  const showData = (result) => {
+    for (const campo in result) {
+      let cidade = result.localidade;
+      let uf = result.uf;
+      document.querySelector('#state').innerHTML = `${cidade} - ${uf}`;
+    }
+  };
+})();
+
+$.ajax({
+  url: 'http://localhost:3000/albums',
+  type: 'GET',
+  success: function (response) {
+    let req = JSON.stringify(response);
+    console.log(`os dados da requisição são: ${req}`);
+  },
+});
+
+function getTotals(){
+  console.log('foi');
+  let e = document.getElementsByName('card-html');
+  //console.log('total: ' + e.length);
+
+  let html = '';
+    html += `Bem vindo ao Muty!!<br>Você possui ${e.length} albuns cadastrados`;
+
+  document.querySelector('#total').innerHTML = html;
+}
+
+function f(){
+
+}

@@ -75,3 +75,7 @@ html {
   height: 3.1rem;
   width: 12.3rem;
 }
+
+.input-font{
+  font-weight: bold;
+}

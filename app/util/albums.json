@@ -1,0 +1,22 @@
+{
+    "albums": [
+      {
+        "id": 1,
+        "albumArt": "https://res.cloudinary.com/df6dc2xwr/image/upload/v1680049532/this-is-why-paramore-album-cover_ku8eld.jpg",
+        "albumName": "This is Why",
+        "albumArtist": "Paramore",
+        "releaseDate": "02/02/2023",
+        "albumRate": "80",
+        "albumMusics": "This is Why, Crave"
+      },
+      {
+        "albumArt": "https://m.media-amazon.com/images/I/91nXuH6lzKL._UF1000,1000_QL80_.jpg",
+        "albumName": "72 Seasons",
+        "albumArtist": "Metallica",
+        "releaseDate": "01/01/2023",
+        "albumRate": "75",
+        "albumMusics": "If Darkness Had a Son, Innamorata",
+        "id": 2
+      }
+    ]
+  }

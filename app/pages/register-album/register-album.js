@@ -5,32 +5,44 @@ import { Album } from '../../model/album.js';
 let albums = JSON.parse(localStorage.getItem('albums')) || [];
 
 window.onload = function () {
+  changeInputColor();
+
+  $('#albumRate').on('blur', function (event) {
+    //imprimindo uma propriedade de event
+    console.log(event.currentTarget);
+    if (this.validity.rangeOverflow || !fieldValidate('albumRate')) {
+      this.setCustomValidity('O valor deve ser entre 0 e 100.');
+      console.log('O valor deve ser entre 0 e 100.');
+    }
+  });
+
+  a();
+};
+
+function changeInputColor() {
   document.forms[0].onsubmit = cadastrarAlbum;
 
   let elements = document.getElementsByTagName('input');
   for (let e of elements) {
-    console.log('e.value');
     e.addEventListener('focus', focus);
-
-    //if(e.value = "")
     e.addEventListener('blur', blur);
   }
 
   function focus(event) {
-    event.target.style.backgroundColor = 'green';
+    event.target.style.borderColor = 'green';
   }
 
   function blur(event) {
-    event.target.style.backgroundColor = 'red';
+    event.target.style.borderColor = 'red';
   }
-};
+}
 
 function cadastrarAlbum(event) {
   event.preventDefault();
 
-  let albumArt = document.getElementById('albumArt').value;
-  let albumName = document.getElementById('albumName').value;
-  let albumArtist = document.getElementById('albumArtist').value;
+  let albumArt = document.getElementById('albumArt').value.trim();
+  let albumName = document.getElementById('albumName').value.toLowerCase();
+  let albumArtist = document.getElementById('albumArtist').value.toUpperCase();
   let releaseDate = document.getElementById('releaseDate').value;
   let albumRate = document.getElementById('albumRate').value;
   let albumMusics = document.getElementById('albumMusics').value;
@@ -69,16 +81,40 @@ function cadastrarAlbum(event) {
 }
 
 //https://media.pitchfork.com/photos/63345315ec0383884068298d/master/w_1280%2Cc_limit/Paramore.jpg
-function loadImage() {
+albumArt.onchange = function () {
   let albumArt = document.getElementById('albumArt').value;
-  let image = document.getElementById('image-preview');
 
-  // Definir a URL da imagem no atributo src
-  image.src = albumArt;
-}
+  let html = '';
+  html += `<img id="image-preview"
+    src="${albumArt}"
+    class="object-fit-cover border rounded" alt="..." style="height: 20em;" >`;
+
+  return (document.querySelector('#image-p').innerHTML = html);
+};
 
 $(document).ready(function () {
   $('#releaseDate').mask('00/00/0000');
 });
 
 $('form').parent().addClass('shadow-lg p-3 mb-5 bg-body-tertiary rounded');
+
+function fieldValidate(id) {
+  let valor = document.getElementById(id).value;
+  if (valor == null || valor == '') {
+    return false;
+  }
+  return true;
+}
+
+function a() {
+  console.log('foi');
+  let e = document.getElementById('albumName');
+  console.log('teste ' + e);
+  e.classList.add('input-font');
+}
+
+document.addEventListener('keypress', function (e) {
+  if (e.charCode === 108) 
+    console.log('oi');
+  
+});

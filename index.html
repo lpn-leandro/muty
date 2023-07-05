@@ -61,7 +61,7 @@
               <h2 class="fs-5">Botões com funcionalidades nada secretas</h2>
               <p>
                 Esse
-                <button class="btn btn-secondary" id="perguntaSecreta">
+                <button class="btn btn-secondary" id="perguntaSecreta" onclick="secretQuestion()">
                   botão
                 </button>
                 vai lhe perguntar algo
@@ -82,12 +82,13 @@
       </div>
       <!-- listagem de albums -->
       <div class="content">
+        <div id="total"></div>
         <div class="row row-cols-1 row-cols-md-4 g-4" id="albumsList"></div>
       </div>
     </main>
     <div id="footer"></div>
     <script type="module" src="/app/util/shared.js"></script>
     <script src="/node_modules/jquery/dist/jquery.js"></script>
-    <script type="module" src="/app/pages/index.js"></script>
+    <script src="/app/pages/index.js"></script>
   </body>
 </html>

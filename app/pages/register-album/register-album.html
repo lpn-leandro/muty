@@ -24,35 +24,34 @@
       <!--Formulario-->
       <form id="form">
         <div class="mb-3">
-          <img id="image-preview"
-            src=""
-            class="object-fit-cover border rounded" alt="..." style="height: 20em;">
-          <br>
+          <div  id="image-p">
+          </div>
+            <br>
           <hr>
-          <label for="albumArt" class="form-label">Capa do Album:</label>
+          <label for="albumArt" class="form-label" name="label-title">Capa do Album:</label>
           <input type="url" class="form-control" id="albumArt" placeholder="Insira a URL para a capa do Album"
-            oninput="loadImage()"/>
+             required/>
         </div>
 
         <div class="mb-3">
-          <label for="albumName" class="form-label">Nome do Album:</label>
-          <input type="text" class="form-control" id="albumName" placeholder="Nome do Album"  />
+          <label for="albumName" class="form-label" name="label-title">Nome do Album:</label>
+          <input type="text" class="form-control" id="albumName" placeholder="Nome do Album"  required/>
         </div>
 
         <div class="mb-3">
-          <label for="albumArtist" class="form-label">Artista do Album</label>
-          <input type="text" class="form-control" id="albumArtist" placeholder="Nome do Artista" />
+          <label for="albumArtist" class="form-label" name="label-title">Artista do Album</label>
+          <input type="text" class="form-control" id="albumArtist" placeholder="Nome do Artista" required/>
         </div>
 
         <div class="mb-3">
-          <label for="releaseDate" class="form-label">Data de lançamento</label>
-          <input type="text" class="form-control" id="releaseDate" placeholder="Data de Lançamento" />
+          <label for="releaseDate" class="form-label" name="label-title">Data de lançamento</label>
+          <input type="text" class="form-control" id="releaseDate" placeholder="Data de Lançamento" pattern="(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[1,2])\/(19|20)\d{2}" required/>
         </div>
 
         
         <div class="mb-3 ">
-          <label for="albumRate" class="form-label">Nota</label><br>
-          <input type="number" min="0" max="100" class="form-control" id="albumRate" placeholder="Nome do Artista" />
+          <label for="albumRate" class="form-label" name="label-title">Nota</label><br>
+          <input type="number" min="0" max="100" class="form-control" id="albumRate" placeholder="Nome do Artista" required/>
           <!--Agrupamento de botões de nota
           <input type="radio" class="btn-check" name="options" id="bad" value="bad">
           <label class="btn btn-outline-danger" for="bad" >Ruim</label>
@@ -67,8 +66,8 @@
           
 
         <div class="mb-3">
-          <label for="musics" class="form-label">Musicas</label>
-          <input type="text" class="form-control" id="albumMusics" placeholder="Musica1, Musica2, Musica3"/>
+          <label for="musics" class="form-label" name="label-title">Musicas</label>
+          <input type="text" class="form-control" id="albumMusics" placeholder="Musica1, Musica2, Musica3" required/>
           <!--<div id="novaMusica"></div>-->
         </div>
 
